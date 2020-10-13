@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LabelAlignmentRTLBug.MainPage"
+             FlowDirection="RightToLeft">
+            
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="0,20,0,20" CornerRadius="0">
+            <Label Text="Bug: Arabic text alignment randomly becomes incorrect for some items in the collection if an item in the collection has mixture of Arabic and English alphabet AND LineHeight attribute is set for the label. " HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
+        </Frame>
+        <CollectionView  x:Name="collectionView"   VerticalOptions="FillAndExpand">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>Some english text أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي Some english text أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي Some english text أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                    <x:String>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate >
+                <DataTemplate>
+                    <Grid Padding="5" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="120" />
+                            <RowDefinition Height="40" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.Row="0" Grid.RowSpan="2" />
+
+                        <Label  Grid.Row="0" Text="{Binding }" HorizontalOptions="Start"
+                                VerticalTextAlignment="Center" LineBreakMode="WordWrap" MaxLines="3" LineHeight="0.8"  FontSize="14" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>
